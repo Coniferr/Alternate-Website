@@ -2,10 +2,20 @@
 Body, HTML {
     color: #FFF;
     background-color: #000;
+    background-image: url('Wallpaper.png');
     font-family: 'Verdana', Geneva, Tahoma, sans-serif;
     margin: 0;
     height: 100vh;
     max-height: 100vh;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #BF1931;
 }
 
 p {
@@ -22,9 +32,9 @@ h4 {
 }
 
 h4#Name {
-    margin-top: 0px;
     margin-bottom: 12px;
     font-size: 22px !important;
+    letter-spacing: 0px;
 }
 
 hr {
@@ -35,14 +45,17 @@ hr {
     height: 3px;
 }
 
+hr#Thin {
+    background: linear-gradient(90deg, #555 10%, #0000 80%);
+    margin: 12px 0;
+    height: 1px; 
+}
+
 /*Containers*/
 
 .AppContainer {
+    justify-content: center;
     display: flex;
-}
-
-.Sidebar:first-child {
-    margin-left: 1.75em;
 }
 
 .Wrapper, .Sidebar {
@@ -50,9 +63,10 @@ hr {
     border-right: #FFF4 1px solid;
     padding: 0 12px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     height: 100vh;
     max-height: 100vh;
+    overflow-y: scroll;
 }
 
 .Sidebar {
@@ -61,9 +75,13 @@ hr {
     border-right: #5A0C17 1px solid;
     padding: 0 12px;
     max-width: 150px;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
 }
 
-.Sidebar a {
+.Sidebar a,
+.Title a {
     color: #FFF;
     font-size: 14px;
     font-weight: 400;
@@ -73,20 +91,59 @@ hr {
     display: block;
 }
 
-.Sidebar a:hover {
+.Sidebar a:hover,
+.Title a:hover {
     color: #BF1931;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-/*About*/
+/*Album*/
 
-.Flex {
+.MusicHeader:first-child {
+    padding-top: 12px;
+}
+
+.MusicHeader {
     display: flex;
 }
-.Photo {
-    border-radius: 8px;
+
+.Title h4 {
+    margin-bottom: 4px !important;
+}
+
+.CoverLarge {
+    border-radius: 3px;
     margin-right: 12px;
-    height: 206px;
-    display: block;
+    height: 100%;
+    width: 280px;
+}
+
+/*Buttons*/
+
+.MusicHeader .Button {
+    margin-bottom: 12px;
+}
+
+.Button {
+    color: #FFF;
+    background-color: #BF1931;
+    border: transparent 1px solid;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+    min-width: 100px;
+    display: inline-block;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.Button:hover,
+.Button:active {
+    border-color: #FFF;
+    color: #FFF;
 }
